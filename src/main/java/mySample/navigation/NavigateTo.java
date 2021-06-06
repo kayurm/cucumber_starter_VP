@@ -1,6 +1,5 @@
 package mySample.navigation;
 
-import mySample.geeks.GeeksActions;
 import mySample.geeks.GeeksHeaderPage;
 import net.thucydides.core.annotations.Step;
 

@@ -3,14 +3,14 @@ package starter.stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import mySample.geeks.GeeksActions;
+import mySample.geeks.GeeksSteps;
 import mySample.navigation.NavigateTo;
 import net.thucydides.core.annotations.Steps;
 
 public class GeeksSearchStepDefinitions {
 
     @Steps
-    GeeksActions geeksPage;
+    GeeksSteps geeks;
 
     @Steps
     NavigateTo navigateTo;
@@ -22,10 +22,11 @@ public class GeeksSearchStepDefinitions {
 
     @When("user looks up {string}")
     public void user_looks_up_something(String searchTerm) {
-        geeksPage.seachFor(searchTerm);
+        geeks.seachFor(searchTerm);
     }
 
     @Then("user should see a popup with results containing {string}")
     public void user_should_see_results_containing_something(String searchTerm) {
+        System.out.println("should be implemented. Search term: "+searchTerm);
     }
 }

@@ -9,8 +9,8 @@ import org.openqa.selenium.support.FindBy;
 public class GeeksHeaderPage extends PageObject {
 
     @FindBy(xpath="//i[@class='gfg-icon gfg-icon_search gfg-icon_white gcse-search__icon']")
-    WebElementFacade magnifierIcon;
+    WebElementFacade MAGNIFIER_ICON;
 
     @FindBy(id="gcse-search-input")
-    WebElementFacade searchField;
+    WebElementFacade SEARCH_FIELD;
 }
