@@ -21,12 +21,12 @@ public class GeeksSearchStepDefinitions {
     }
 
     @When("user looks up {string}")
-    public void user_looks_up_something(String searchTerm) {
+    public void user_looks(String searchTerm) {
         geeks.seachFor(searchTerm);
     }
 
     @Then("user should see a popup with results containing {string}")
-    public void user_should_see_results_containing_something(String searchTerm) {
+    public void user_should_see_results(String searchTerm) {
         System.out.println("should be implemented. Search term: "+searchTerm);
     }
 }
