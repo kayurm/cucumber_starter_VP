@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = "src/test/resources/features/submit_callback_request.feature"
+        features = "src/test/resources/features/submit_contact_form.feature"
 )
-public class CallbackFormTestSuite {
+public class ContactFormTestSuite {
 }

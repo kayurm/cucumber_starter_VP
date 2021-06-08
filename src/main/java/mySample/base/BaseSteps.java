@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public abstract class BaseSteps extends UIInteractionSteps {
 
-    protected final Logger LOG = Logger.getLogger(getClass().getSimpleName());
+    protected final Logger LOG = Logger.getLogger(getClass());
 
     @Step
     public void switchTab(WebDriver driver){

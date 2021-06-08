@@ -1,14 +1,18 @@
 package mySample.geeks;
 
-import net.serenitybdd.core.steps.UIInteractionSteps;
+import mySample.base.BaseSteps;
 import net.thucydides.core.annotations.Step;
-import org.apache.log4j.Logger;
 
 
-public class GeeksSteps extends UIInteractionSteps {
+public class GeeksSteps extends BaseSteps {
 
-    private final Logger LOG = Logger.getLogger(getClass());
     GeeksHeaderPage geeksPage;
+
+    @Step
+    public void openPage(){
+        LOG.info("Open contact page");
+        geeksPage.open();
+    }
 
     @Step("Search for {0}")
     public void seachFor(String term){

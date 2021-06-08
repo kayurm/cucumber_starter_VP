@@ -5,11 +5,11 @@ import net.thucydides.core.annotations.Step;
 
 public class CookiesSteps extends BaseSteps {
 
-    CookiesPage cookiesPage;
+    CookiesDialogue cookiesDialogue;
 
     @Step
     public void acceptAllCookies(){
-        element(cookiesPage.COOKIES_POPUP).shouldBeVisible();
-        element(cookiesPage.ALLE_AKZEPTIEREN_BUTTON).click();
+        $(cookiesDialogue.COOKIES_POPUP).shouldBeVisible();
+        $(cookiesDialogue.ALLE_AKZEPTIEREN_BUTTON).click();
     }
 }

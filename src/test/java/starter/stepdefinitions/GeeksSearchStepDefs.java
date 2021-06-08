@@ -4,20 +4,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mySample.geeks.GeeksSteps;
-import mySample.navigation.NavigateTo;
 import net.thucydides.core.annotations.Steps;
 
-public class GeeksSearchStepDefinitions {
+public class GeeksSearchStepDefs {
 
     @Steps
     GeeksSteps geeks;
 
-    @Steps
-    NavigateTo navigateTo;
-
     @Given("user is on the geeksforgeeks page")
     public void user_is_on_the_geeksforgeeks_page() {
-        navigateTo.theGeeksHomePage();
+        geeks.openPage();
     }
 
     @When("user looks up {string}")

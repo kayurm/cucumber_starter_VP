@@ -3,7 +3,6 @@ package starter.stepdefinitions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mySample.geeks.GeeksSteps;
-import mySample.navigation.NavigateTo;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.UseTestDataFrom;
@@ -13,10 +12,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value="testdata/geeks.csv")
-public class GeeksSearchParamStepDefinitions {
+public class GeeksSearchParamStepDefs {
 
     private final Logger LOG = Logger.getLogger(getClass());
     private String searchTerm;
+
+    @Steps
+    GeeksSteps geeks;
 
     public void setSearchTerm(String searchTerm) {
         this.searchTerm = searchTerm;
@@ -28,16 +30,10 @@ public class GeeksSearchParamStepDefinitions {
     @Test
     public void data_driven_test() {
         LOG.info("SEARCH TERM: "+searchTerm);
-        navigateTo.theGeeksHomePage();
+        geeks.openPage();
         geeks.seachFor(searchTerm);
         System.out.println("should be implemented. Search term: "+searchTerm);
     }
-
-    @Steps
-    GeeksSteps geeks;
-
-    @Steps
-    NavigateTo navigateTo;
 
     @When("user looks up (.*)")
     public void user_looks_up() {
