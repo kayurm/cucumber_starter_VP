@@ -1,17 +1,19 @@
 package mySample.geeks;
 
 import mySample.base.BaseSteps;
+import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.thucydides.core.annotations.Step;
 
 
 public class GeeksSteps extends BaseSteps {
 
-    GeeksHeaderPage geeksPage;
+    GeeksPage geeksPage;
 
     @Step
     public void openPage(){
-        LOG.info("Open contact page");
-        geeksPage.open();
+        LOG.info("Opening geeks page at: " + geeksPage.getDriver().getCurrentUrl());
+        //geeksPage.open();
+        geeksPage.openUrl("https://www.geeksforgeeks.org/");
     }
 
     @Step("Search for {0}")

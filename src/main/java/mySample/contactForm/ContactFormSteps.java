@@ -17,12 +17,6 @@ public class ContactFormSteps extends BaseSteps {
     }
 
     @Step
-    public void acceptAllCookies(){
-        $(contactFormPage.COOKIES_POPUP).shouldBeVisible();
-        $(contactFormPage.ALLE_AKZEPTIEREN_BUTTON).click();
-    }
-
-    @Step
     public void verifyUserInContactFormPage(){
         LOG.info("verifying - in contact form");
         $(contactFormPage.TITLE).shouldBeVisible();
@@ -47,7 +41,7 @@ public class ContactFormSteps extends BaseSteps {
 
     @Step
     public void verifyConfirmationMessageAppears(){
-
+        LOG.info("to implement");
     }
 
     private By defineSelector(String fieldName){

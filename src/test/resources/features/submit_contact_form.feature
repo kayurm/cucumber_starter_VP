@@ -16,7 +16,7 @@ Feature: Callback Form
       | plz     | 12345             |
       | ort     | Koeln             |
       | email   | auto@email.com    |
-      | phone   | +356232333        |
+      | phone   | 123456789         |
       | message | please contact me |
     And user accepts the Datenschutzbestimmungen
     And user submits the Contact form

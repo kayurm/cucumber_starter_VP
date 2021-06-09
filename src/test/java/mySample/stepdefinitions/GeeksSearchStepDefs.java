@@ -1,4 +1,4 @@
-package starter.stepdefinitions;
+package mySample.stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,12 +16,12 @@ public class GeeksSearchStepDefs {
         geeks.openPage();
     }
 
-    @When("user looks up {string}")
+    @When("^user looks up (.*)$")
     public void user_looks(String searchTerm) {
         geeks.seachFor(searchTerm);
     }
 
-    @Then("user should see a popup with results containing {string}")
+    @Then("^user should see a popup with results containing (.*)$")
     public void user_should_see_results(String searchTerm) {
         System.out.println("should be implemented. Search term: "+searchTerm);
     }
