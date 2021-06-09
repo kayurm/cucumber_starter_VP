@@ -9,14 +9,15 @@ Feature: Callback Form
     And user saw that Contact form was opened
 
   Scenario: Submit callback request
-    When user enters "SomeName" into name field
-    And user enters "SomeSurname" into Surname field
-    And user enters "SomeStreet" into Street field
-    And user enters "Zip" into PLZ field
-    And user enters "Ort" into Ort field
-    And user enters "email@some.com" into Email field
-    And user enters "+121212" into Phone field
-    And user enters "message" into Message field
+    When user types into fields following values
+      | name    | Brendan           |
+      | surname | Pite              |
+      | strasse | auto street       |
+      | plz     | 12345             |
+      | ort     | Koeln             |
+      | email   | auto@email.com    |
+      | phone   | +356232333        |
+      | message | please contact me |
     And user accepts the Datenschutzbestimmungen
     And user submits the Contact form
     Then User gets a confirmation message

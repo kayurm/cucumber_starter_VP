@@ -9,5 +9,4 @@ import org.junit.runner.RunWith;
         plugin = {"pretty"},
         features = "src/test/resources/features/submit_contact_form.feature"
 )
-public class ContactFormTestSuite {
-}
+public class ContactFormTestSuite {}

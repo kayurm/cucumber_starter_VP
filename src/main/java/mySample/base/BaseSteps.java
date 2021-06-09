@@ -2,7 +2,6 @@ package mySample.base;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.pages.PageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 

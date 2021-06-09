@@ -4,7 +4,7 @@ import mySample.base.BaseSteps;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
 
-import static mySample.contactForm.ContactFormPage.Field;
+import static org.assertj.core.api.Assertions.fail;
 
 public class ContactFormSteps extends BaseSteps {
 
@@ -29,7 +29,7 @@ public class ContactFormSteps extends BaseSteps {
     }
 
     @Step("Entering value {1} to the field {0}")
-    public void enterValueToField(Field fieldName, String value){
+    public void enterValueToField(String fieldName, String value){
         LOG.info("Enter data: " + value + " To the field:" + fieldName);
         By fieldBy = defineSelector(fieldName);
         $(fieldBy).type(value);
@@ -50,36 +50,39 @@ public class ContactFormSteps extends BaseSteps {
 
     }
 
-    private By defineSelector(Field fieldName){
+    private By defineSelector(String fieldName){
         LOG.info("defining selector for field: " + fieldName);
         By selectorBy = null;
-        switch (fieldName) {
-            case NAME:
+        switch (fieldName.toLowerCase()) {
+            case "name":
                 selectorBy = contactFormPage.NAME_FIELD;
                 break;
-            case SURNAME:
+            case "surname":
                 selectorBy = contactFormPage.SURNAME_FIELD;
                 break;
-            case STRASSE:
+            case "strasse":
+            case "street":
                 selectorBy = contactFormPage.STRASSE_FIELD;
                 break;
-            case PLZ:
+            case "plz":
+            case "zip":
                 selectorBy = contactFormPage.PLZ_FIELD;
                 break;
-            case ORT:
+            case "ort":
+            case "city":
                 selectorBy = contactFormPage.ORT_FIELD;
                 break;
-            case PHONE:
+            case "phone":
                 selectorBy = contactFormPage.PHONE_FIELD;
                 break;
-            case EMAIL:
+            case "email":
                 selectorBy = contactFormPage.EMAIL_FIELD;
                 break;
-            case MESSAGE:
+            case "message":
                 selectorBy = contactFormPage.MESSAGE_FIELD;
                 break;
             default:
-                LOG.error("no such field");
+                fail("No such filed: "+fieldName);
         }
         return selectorBy;
     }

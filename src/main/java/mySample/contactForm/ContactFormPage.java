@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 @DefaultUrl("https://new-ws-fit.canadalife.de/kontaktformular/")
 public class ContactFormPage extends PageObject {
 
-    public enum Field {NAME,SURNAME, STRASSE,PLZ,ORT,EMAIL,PHONE,MESSAGE}
+    //public enum Field {NAME,SURNAME, STRASSE,PLZ,ORT,EMAIL,PHONE,MESSAGE}
     final By TITLE = By.xpath("//div[@class='cl-form-section__title' and text()='Allgemeine Anfrage']");
     final By NAME_FIELD = By.name("firstName");
     final By SURNAME_FIELD = By.name("surname");
