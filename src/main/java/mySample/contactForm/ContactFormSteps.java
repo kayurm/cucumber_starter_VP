@@ -4,6 +4,10 @@ import mySample.base.BaseSteps;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
 
+import java.time.temporal.TemporalUnit;
+import java.util.concurrent.TimeUnit;
+
+import static java.time.temporal.ChronoUnit.SECONDS;
 import static org.assertj.core.api.Assertions.fail;
 
 public class ContactFormSteps extends BaseSteps {
@@ -11,40 +15,46 @@ public class ContactFormSteps extends BaseSteps {
     ContactFormPage contactFormPage;
 
     @Step
-    public void openPage(){
+    public void openPage() {
         LOG.info("Open contact page");
         contactFormPage.open();
     }
 
     @Step
-    public void verifyUserInContactFormPage(){
-        LOG.info("verifying - in contact form");
+    public void verifyUserInContactFormPage() {
+        LOG.info("verifying - being in contact form");
         $(contactFormPage.TITLE).shouldBeVisible();
     }
 
     @Step("Entering value {1} to the field {0}")
-    public void enterValueToField(String fieldName, String value){
-        LOG.info("Enter data: " + value + " To the field:" + fieldName);
+    public void enterValueToField(String fieldName, String value) {
+        LOG.info("Entering data: " + value + " To the field:" + fieldName);
         By fieldBy = defineSelector(fieldName);
         $(fieldBy).type(value);
     }
 
     @Step
-    public void clickDatenschutzCheckbox(){
+    public void clickDatenschutzCheckbox() {
+        LOG.info("clicking datenschutz checkbox");
         $(contactFormPage.DATENSCHUTZ_CHECKBOX).click();
     }
 
     @Step
-    public void submitForm(){
+    public void submitForm() {
+        LOG.info("clicking Absenden");
         $(contactFormPage.ABSENDEN_BUTTON).click();
     }
 
     @Step
-    public void verifyConfirmationMessageAppears(){
-        LOG.info("to implement");
+    public void verifyConfirmationMessageAppears() {
+        LOG.info("verifying conf.message");
+        //setWaitForTimeout(7000);
+        setImplicitTimeout(10, SECONDS);
+        $(contactFormPage.GESCHAEFT_CONF_MESSAGE).shouldBeVisible();
+        resetImplicitTimeout();
     }
 
-    private By defineSelector(String fieldName){
+    private By defineSelector(String fieldName) {
         LOG.info("defining selector for field: " + fieldName);
         By selectorBy = null;
         switch (fieldName.toLowerCase()) {
@@ -76,7 +86,7 @@ public class ContactFormSteps extends BaseSteps {
                 selectorBy = contactFormPage.MESSAGE_FIELD;
                 break;
             default:
-                fail("No such filed: "+fieldName);
+                fail("No such filed: " + fieldName);
         }
         return selectorBy;
     }

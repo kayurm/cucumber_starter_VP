@@ -1,10 +1,8 @@
 package mySample.geeks;
 
-import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-import net.thucydides.core.util.EnvironmentVariables;
 import org.openqa.selenium.support.FindBy;
 
 @DefaultUrl("page:geeks.page")

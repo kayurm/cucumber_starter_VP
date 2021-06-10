@@ -17,5 +17,7 @@ public class ContactFormPage extends PageObject {
     final By PHONE_FIELD = By.name("telephone");
     final By MESSAGE_FIELD = By.name("message");
     final By DATENSCHUTZ_CHECKBOX = By.xpath("//span[text()='Einwilligung in Datenschutzbestimmungen']");
-    final By ABSENDEN_BUTTON = By.xpath("//span[text()='Einwilligung in Datenschutzbestimmungen']");
+    final By ABSENDEN_BUTTON = By.xpath("//button[@type='submit']");
+
+    final By GESCHAEFT_CONF_MESSAGE = By.xpath("//div[text()='Geschafft!']");
 }

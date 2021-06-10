@@ -50,13 +50,10 @@ public class GeeksSearchParamStepDefs {
         geeks.seachFor(Serenity.sessionVariableCalled("searchTerm"));
     }
 
-
     @Then("user should see a popup with results with searchTerm")
     public void user_should_see_results() {
         System.out.println("should be implemented. Search term: " + Serenity.sessionVariableCalled("searchTerm"));
     }
-
-
 
 //    @Test
 //    public void data_driven_test() {

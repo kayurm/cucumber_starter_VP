@@ -16,9 +16,9 @@
         <serenity.cucumber.version>2.3.2</serenity.cucumber.version>
         <encoding>UTF-8</encoding>
         <tags></tags>
-<!--        <webdriver.base.url></webdriver.base.url>-->
         <environment>dev</environment>
-<!--        <suiteName>ContactFormTestSuite</suiteName>-->
+        <parallel.tests>2</parallel.tests>
+        <suiteName>ContactFormTestSuite</suiteName>
     </properties>
 
     <repositories>
@@ -135,9 +135,9 @@
                         <include>**/When*.java</include>
                     </includes>
                     <systemPropertyVariables>
-<!--                        <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>-->
+                        <threadCount>${parallel.tests}</threadCount>
                         <environment>${environment}</environment>
-<!--                        <suiteName>${suiteName}</suiteName>-->
+                        <suiteName>${suiteName}</suiteName>
                     </systemPropertyVariables>
                     <parallel>classes</parallel>
 <!--                    <parallel>methods</parallel>-->
