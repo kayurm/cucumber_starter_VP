@@ -1,14 +1,14 @@
-Feature: Callback Form
+Feature: Contact Form
   As a user
   I want to be contacted by CLE
-  So I submit callback request
+  So I submit contact form
 
   Background:
     Given user has opened Contact form on the website
     And user has accepted all cookies
     And user saw that Contact form was opened
 
-  Scenario: Submit callback request
+  Scenario: Submit contact request
     When user types into fields following values
       | name    | Brendan           |
       | surname | Pite              |

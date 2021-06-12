@@ -4,9 +4,6 @@ import mySample.base.BaseSteps;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
 
-import java.time.temporal.TemporalUnit;
-import java.util.concurrent.TimeUnit;
-
 import static java.time.temporal.ChronoUnit.SECONDS;
 import static org.assertj.core.api.Assertions.fail;
 
@@ -48,7 +45,6 @@ public class ContactFormSteps extends BaseSteps {
     @Step
     public void verifyConfirmationMessageAppears() {
         LOG.info("verifying conf.message");
-        //setWaitForTimeout(7000);
         setImplicitTimeout(10, SECONDS);
         $(contactFormPage.GESCHAEFT_CONF_MESSAGE).shouldBeVisible();
         resetImplicitTimeout();
