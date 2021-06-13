@@ -21,4 +21,9 @@ public abstract class BaseSteps extends UIInteractionSteps {
             }
         }
     }
+
+    @Step
+    public void goBack(){
+        this.getDriver().navigate().back();
+    }
 }

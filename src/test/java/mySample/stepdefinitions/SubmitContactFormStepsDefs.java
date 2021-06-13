@@ -8,8 +8,8 @@ import mySample.contactForm.ContactFormSteps;
 import mySample.cookiesDialogue.CookiesSteps;
 import net.thucydides.core.annotations.Steps;
 
-
 import java.util.List;
+
 
 public class SubmitContactFormStepsDefs {
 
@@ -31,7 +31,7 @@ public class SubmitContactFormStepsDefs {
 
     @Given("user saw that Contact form was opened")
     public void userSawCallbackFormWasOpened() {
-        contactForm.verifyUserInContactFormPage();
+        contactForm.verifyBeingInContactFormPage();
     }
 
     @When("user types into fields following values")

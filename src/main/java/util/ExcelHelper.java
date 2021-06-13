@@ -13,9 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class ExcelReader {
+public class ExcelHelper {
 
-    private final static Logger LOG = LogManager.getLogger(ExcelReader.class);
+    private final static Logger LOG = LogManager.getLogger(ExcelHelper.class);
 
     public static List<List<String>> getSheetData(String filePath, String sheetName) {
         LOG.info(String.format("Reading the spreadsheet '%s' at '%s')",sheetName,filePath));
@@ -98,7 +98,7 @@ public class ExcelReader {
     @Ignore("for debugging")
     @Test
     public void testExcel(){
-        List<List<String>> dataList = ExcelReader.getSheetData("src/test/resources/testdata/userData.xlsx", "happyPath");
+        List<List<String>> dataList = ExcelHelper.getSheetData("src/test/resources/testdata/userData.xlsx", "happyPath");
         System.out.println(dataList);
         List<LinkedHashMap<String, String>> resultMap = getSheetDataAsMap(dataList);
         resultMap.forEach(System.out::println);

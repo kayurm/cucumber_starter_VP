@@ -20,4 +20,5 @@ public class ContactFormPage extends PageObject {
     final By ABSENDEN_BUTTON = By.xpath("//button[@type='submit']");
 
     final By GESCHAEFT_CONF_MESSAGE = By.xpath("//div[text()='Geschafft!']");
+    final By ERROR_MESSAGE_POPUP = By.cssSelector(".kid-tool__toast-content");
 }

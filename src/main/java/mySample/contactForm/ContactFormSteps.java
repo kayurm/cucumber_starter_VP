@@ -18,7 +18,7 @@ public class ContactFormSteps extends BaseSteps {
     }
 
     @Step
-    public void verifyUserInContactFormPage() {
+    public void verifyBeingInContactFormPage() {
         LOG.info("verifying - being in contact form");
         $(contactFormPage.TITLE).shouldBeVisible();
     }
@@ -31,27 +31,43 @@ public class ContactFormSteps extends BaseSteps {
     }
 
     @Step
-    public void clickDatenschutzCheckbox() {
+    public ContactFormSteps clickDatenschutzCheckbox() {
         LOG.info("clicking datenschutz checkbox");
         $(contactFormPage.DATENSCHUTZ_CHECKBOX).click();
+        return this;
     }
 
     @Step
-    public void submitForm() {
+    public ContactFormSteps submitForm() {
         LOG.info("clicking Absenden");
         $(contactFormPage.ABSENDEN_BUTTON).click();
+        return this;
     }
 
     @Step
-    public void verifyConfirmationMessageAppears() {
+    public ContactFormSteps verifyConfirmationMessageAppears() {
         LOG.info("verifying conf.message");
         setImplicitTimeout(10, SECONDS);
         $(contactFormPage.GESCHAEFT_CONF_MESSAGE).shouldBeVisible();
         resetImplicitTimeout();
+        return this;
     }
 
+    @Step
+    public void verifyErrorMessageAppears() {
+        LOG.info("verifying error message");
+        $(contactFormPage.ERROR_MESSAGE_POPUP).shouldBeVisible();
+    }
+
+    @Step
+    public ContactFormSteps verifyValuesInConfirmationScreen() {
+        LOG.info("verifying values in conf. screen");
+        //TODO to implement
+        return this;
+    }
+
+
     private By defineSelector(String fieldName) {
-        LOG.info("defining selector for field: " + fieldName);
         By selectorBy = null;
         switch (fieldName.toLowerCase()) {
             case "name":
