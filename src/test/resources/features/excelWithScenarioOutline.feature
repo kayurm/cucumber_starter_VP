@@ -2,10 +2,11 @@ Feature: Contact Form with Scenario Outline Excel Feed
 
   Background:
     Given I have users data in excel file "userData.xlsx"
+    And I opened Contact form on the website
+    And I accepted all cookies
+
 
   Scenario Outline: Successfully submit Contact form
-    Given I opened Contact form on the website
-    And I accepted all cookies
     When I read data from the spreadsheet named "happyPath"
     And I input values into fields taken from the sheet <row>
     And I accept Datenschutz and submit the form
@@ -17,8 +18,6 @@ Feature: Contact Form with Scenario Outline Excel Feed
       | 3   |
 
   Scenario Outline: Fail to submit Contact form with Bad User Data
-    Given I opened Contact form on the website
-    And I accepted all cookies
     When I read data from the spreadsheet named 'negativeScenario'
     And I input values into fields taken from the sheet <row>
     And I accept Datenschutz and submit the form

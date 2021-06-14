@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = "src/test/resources/features/excelWithScenarioOutline.feature"
+        features = "src/test/resources/features/excelWithLoop.feature"
 )
 public class ContactFormExcelTestSuite {
 }

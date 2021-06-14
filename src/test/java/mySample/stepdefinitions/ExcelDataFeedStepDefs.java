@@ -1,7 +1,6 @@
 package mySample.stepdefinitions;
 
-import com.qmetry.qaf.automation.step.QAFTestStepProvider;
-import io.cucumber.java.en.And;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,6 +15,7 @@ import java.util.Map;
 
 
 public class ExcelDataFeedStepDefs {
+
 
     @Steps
     CookiesSteps cookiesDialogue;
@@ -56,7 +56,7 @@ public class ExcelDataFeedStepDefs {
      *      VARIANT 1. LOOPED TEST (see feature 'excelWithLoop.feature')
      *      I don't like it as:
      *      - if one of the iterations (with a row of dataset) fails, the test itself fails, and using try-catch won't be good for reporting
-     *      - iterations are dependable, as I need to go beck to the Input page (or open it again) after I finish a new iteration
+     *      - iterations are dependable, as I need to go back to the Input page (or open it again) after I finish a new iteration
      */
     @When("I input each value into fields on the form and submit the form I expect confirmation message with all values")
     public void iInputEachValueIntoFields() {
@@ -71,7 +71,7 @@ public class ExcelDataFeedStepDefs {
                     .submitForm()
                     .verifyConfirmationMessageAppears()
                     .verifyValuesInConfirmationScreen()
-                    .goBack();
+                    .openPage();
         }
     }
 

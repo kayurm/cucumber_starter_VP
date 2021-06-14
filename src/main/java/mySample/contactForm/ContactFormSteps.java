@@ -33,7 +33,7 @@ public class ContactFormSteps extends BaseSteps {
     @Step
     public ContactFormSteps clickDatenschutzCheckbox() {
         LOG.info("clicking datenschutz checkbox");
-        $(contactFormPage.DATENSCHUTZ_CHECKBOX).click();
+        setCheckbox($(contactFormPage.DATENSCHUTZ_CHECKBOX),true);
         return this;
     }
 
